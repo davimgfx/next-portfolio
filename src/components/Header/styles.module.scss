@@ -1,0 +1,147 @@
+.header {
+  height: 8.3rem;
+  width: 100%;
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  border-bottom: 1px solid var(--header-line);
+
+  .navBar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    max-width: 140rem;
+    padding: 0 5.6rem;
+    margin: 0 auto;
+  }
+
+  .section {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    list-style: none;
+    gap: 1rem;
+    li {
+      cursor: pointer;
+      padding: 1rem;
+
+      &:last-child {
+        padding: 0;
+      }
+
+      &:hover {
+        color: var(--background-icons);
+      }
+    }
+
+    .flagMobile {
+      display: none;
+    }
+  }
+
+  .flagAndIconTheme {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    .iconThemeDiv {
+      background-color: var(--background-icons);
+      width: 3.4rem;
+      height: 3.4rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 999px;
+      cursor: pointer;
+
+      &:hover {
+        .iconTheme {
+          color: var(--white);
+          transition: filter 0.9s ease-in-out;
+        }
+      }
+
+      .iconTheme {
+        width: 1.8rem;
+        color: var(--color-icons);
+      }
+    }
+
+    .flag {
+      cursor: pointer;
+      border-radius: 5px;
+      border: 3px solid var(--background-icons);
+      transition: filter 0.3s ease-in-out;
+
+      &:hover {
+        filter: brightness(1.1);
+      }
+    }
+
+    .iconHamburgerDiv {
+      width: 0;
+      background-color: var(--background-icons);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 999px;
+      cursor: pointer;
+
+      .iconHamburger {
+        display: none;
+        width: 1.8rem;
+        color: var(--color-icons);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .header {
+    .navBar {
+      padding: 0 2.8rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .header {
+    .navBar {
+      .section {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(153, 153, 153, 0.6);
+        flex-direction: column;
+        justify-content: center;
+        height: 24.7rem;
+        border-radius: 0 0 2rem 2rem;
+
+        .flagMobile {
+          display: block;
+          border-radius: 5px;
+          border: 3px solid var(--background-icons);
+        }
+      }
+
+      .none {
+        display: none;
+      }
+
+      .flag {
+        display: none;
+      }
+
+      .iconHamburgerDiv {
+        width: 3.4rem;
+        height: 3.4rem;
+
+        .iconHamburger {
+          display: flex;
+        }
+      }
+    }
+  }
+}
