@@ -5,8 +5,8 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { IoIosMoon, IoMdClose } from "react-icons/io";
 import { MdLightMode } from "react-icons/md";
 
-import brazilFlag from "@/assets/brazil-flag.png";
-import EnglishFlag from "@/assets/united-kingdom-flag.png";
+import brazilFlag from "../../../assets/brazil-flag.png";
+import EnglishFlag from "../../../assets/united-kingdom-flag.png";
 
 type ToggleBooleanStateType = "isMenuOpen" | "isDark" | "isBrazilianFlag";
 

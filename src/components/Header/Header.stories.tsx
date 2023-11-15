@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Header } from "./index";
 
 const meta: Meta<typeof Header> = {
-  title: "components/shared/Header",
+  title: "components/Header",
   component: Header,
   parameters: {
     layout: "fullscreen",
