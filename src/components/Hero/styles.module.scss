@@ -1,0 +1,47 @@
+.hero {
+  height: 95vh;
+  width: 100%;
+  background: var(--background-primary-500);
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .heroDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .heroH2Text {
+      max-width: 60.74rem;
+      font-size: 10rem;
+      text-align: center;
+      line-height: 0.9;
+
+      .react {
+        text-shadow: 1px 1px 1px #919191, 1px 2px 1px #919191,
+          1px 3px 1px #919191, 1px 4px 1px #919191, 1px 5px 1px #919191,
+          1px 6px 1px #919191, 1px 7px 1px #919191, 1px 8px 1px #919191,
+          1px 9px 1px #919191, 1px 10px 1px #919191,
+          1px 18px 6px hsla(0, 0%, 6%, 0.4), 1px 22px 10px hsla(0, 0%, 6%, 0.2),
+          1px 25px 35px hsla(0, 0%, 6%, 0.2), 1px 30px 60px hsla(0, 0%, 6%, 0.4);
+      }
+    }
+
+    .bar {
+      width: 60.74rem;
+      height: 7px;
+      border-radius: 8px;
+      background-color: var(--primary-500);
+    }
+
+    .description {
+      margin: 1.1rem 0;
+    }
+
+    .buttonDiv {
+      display: flex;
+      gap: 0.8rem;
+    }
+  }
+}

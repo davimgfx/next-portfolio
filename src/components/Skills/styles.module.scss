@@ -1,0 +1,60 @@
+.skills {
+  transform: skewY(3deg);
+  padding: 6rem 0;
+  display: flex;
+  justify-content: center;
+  background-color: var(--background-primary-700);
+
+  .wrapper {
+    transform: skewY(-3deg);
+    width: 100rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.icons {
+  width: 43rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem 0.5rem;
+}
+
+.description {
+  margin-bottom: 2.2rem;
+}
+
+.profile_div {
+  width: 354px;
+  height: 354px;
+  border-radius: 999px;
+  border: 3px var(--white) solid;
+  position: relative;
+
+  .profile_image {
+    position: relative;
+  }
+
+  .purple_circle {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: var(--primary-500);
+    border-radius: 999px;
+    height: 35rem;
+    width: 35rem;
+  }
+
+  .cylinder_purple {
+    position: absolute;
+    top: -40px;
+    left: 30px;
+    width: 283.496px;
+    height: 447.944px;
+    transform: rotate(45deg);
+    border-radius: 447.944px;
+    background: rgba(117, 78, 249, 0.35);
+  }
+}
+

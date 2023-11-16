@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-import { MdOutlineFileDownload } from "react-icons/md";
+import { IoMdEye } from "react-icons/io";
 
 import styles from "./styles.module.scss";
 
@@ -20,9 +20,14 @@ export const Button = ({ children, color = "primary", icon }: ButtonProps) => {
       ? `${styles.button} ${styles.primary}`
       : `${styles.button} ${styles.secondary}`;
 
-  const iconComponent = icon === "download" ? <MdOutlineFileDownload className={styles.icon}/> : "";
+  const iconComponent =
+    icon === "download" ? <IoMdEye className={styles.icon} /> : "";
 
-  const iconComponentStyle = icon === "download" ? styles.buttonIcon : ""
+  const iconComponentStyle = icon === "download" ? styles.buttonIcon : "";
 
-  return (<button className={`${allStyles} ${iconComponentStyle}`}>{children} {iconComponent}</button>)
+  return (
+    <button className={`${allStyles} ${iconComponentStyle}`}>
+      <span>{children}</span> {iconComponent}
+    </button>
+  );
 };

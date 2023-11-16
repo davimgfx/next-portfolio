@@ -1,12 +1,14 @@
+import { useContext } from "react";
+
 import styles from "../styles.module.scss";
 
+import { ThemeContext } from "@/context/ThemeContext";
 import { useState, useCallback } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoIosMoon, IoMdClose } from "react-icons/io";
 import { MdLightMode } from "react-icons/md";
 
-import brazilFlag from "../../../assets/brazil-flag.png";
-import EnglishFlag from "../../../assets/united-kingdom-flag.png";
+import { brazilFlag, EnglishFlag } from "@/assets/flags";
 
 type ToggleBooleanStateType = "isMenuOpen" | "isDark" | "isBrazilianFlag";
 
@@ -15,24 +17,23 @@ export const useHeader = () => {
   const [isDark, setIsDark] = useState(false);
   const [isBrazilianFlag, setIsBrazilianFlag] = useState(true);
 
-  const toggleBooleanState = useCallback(
-    (stateName: ToggleBooleanStateType) => () => {
-      switch (stateName) {
-        case "isMenuOpen":
-          setIsMenuOpen((prev) => !prev);
-          break;
-        case "isDark":
-          setIsDark((prev) => !prev);
-          break;
-        case "isBrazilianFlag":
-          setIsBrazilianFlag((prev) => !prev);
-          break;
-        default:
-          break;
-      }
-    },
-    []
-  );
+  const { theme, setTheme } = useContext(ThemeContext);
+
+  const toggleBooleanState = (stateName: ToggleBooleanStateType) => {
+    switch (stateName) {
+      case "isMenuOpen":
+        setIsMenuOpen((prev) => !prev);
+        break;
+      case "isDark":
+        setIsDark((prev) => !prev);
+        break;
+      case "isBrazilianFlag":
+        setIsBrazilianFlag((prev) => !prev);
+        break;
+      default:
+        break;
+    }
+  };
 
   const flag = isBrazilianFlag ? brazilFlag : EnglishFlag;
 

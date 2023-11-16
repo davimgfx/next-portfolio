@@ -5,14 +5,35 @@
   margin: 0;
   padding: 0;
   font-family: var(--font-poppins), "sans-serif";
+  text-decoration: none;
 }
 
 html {
   font-size: 62.5%;
 }
 
-p{
-  font-size: var(--font-size-lg);
+#light{
+  background: var(--background-primary-500);
 }
 
+#dark{
+  background: var(--background-primary-500);
+}
 
+h2{
+  font-size: var(--font-size-5xl);
+  color: var(--text-main);
+}
+
+h3{
+  color: var(--text-main);
+}
+
+p{
+  font-size: var(--font-size-sm);
+  color: var(--text-paragraph);
+}
+
+.primary{
+  color: var(--primary-500)
+}

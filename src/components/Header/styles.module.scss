@@ -1,10 +1,14 @@
 .header {
+  position: fixed;
   height: 8.3rem;
   width: 100%;
   font-size: var(--font-size-lg);
   font-weight: 700;
   border-bottom: 1px solid var(--header-line);
-
+  background: var(--background-primary-500);
+  color: var(--text-main);
+  z-index: 90;
+  
   .navBar {
     position: relative;
     display: flex;

@@ -4,7 +4,9 @@
   --secondary-500: rgba(57, 62, 70, 0.75);
 
   --white: rgb(255, 255, 255);
+}
 
+#light {
   --text-main: rgb(0, 0, 0);
   --text-paragraph: rgba(21, 21, 21, 0.75);
 
@@ -15,31 +17,21 @@
   --color-icons: rgba(255, 255, 255, 0.75);
 
   --background-primary-500: rgba(248, 248, 248, 1);
-  --background-primary-700: rgba(240, 240, 240, 1);
+  --background-primary-700: rgba(201, 201, 201, 1);
 
-  --background-projects-500: rgba(57, 62, 70, 0.04);
+  --background-projects-500: rgba(57, 62, 70, 0.486);
 }
 
-#lightMode {
-  --text-main: rgb(0, 0, 0);
-  --text-paragraph: rgba(21, 21, 21, 0.75);
-
-  --background-icons: rgba(98, 98, 98, 1);
-
-  --background-primary-500: rgba(248, 248, 248, 1);
-  --background-primary-700: rgba(240, 240, 240, 1);
-
-  --background-projects-500: rgba(57, 62, 70, 0.04);
-}
-
-#darkMode {
+#dark {
   --text-main: rgb(255, 255, 255);
   --text-paragraph: rgba(238, 238, 238, 0.75);
 
+  --header-line: rgba(238, 238, 238, 0.1);
+
   --background-icons: rgba(57, 62, 70, 1);
 
-  --background-secondary-500: rgba(34, 40, 49, 1);
-  --background-secondary-700: rgba(27, 30, 34, 1);
+  --background-primary-500: rgba(34, 40, 49, 1);
+  --background-primary-700: rgba(27, 30, 34, 1);
 
   --background-projects-500: rgba(57, 62, 70, 0.5);
 }

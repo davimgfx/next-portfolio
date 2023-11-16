@@ -1,0 +1,43 @@
+.section {
+  display: flex;
+  justify-content: center;
+  background: var(--background-primary-500);
+  .wrapper {
+    max-width: 130rem;
+    padding: 6rem 1.6rem;
+
+    .description {
+      margin-bottom: 1rem;
+    }
+  }
+}
+.projects {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 4.8rem;
+  .project {
+    width: calc(25rem + 4rem);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .projectContainerImage {
+      background: var(--background-icons);
+      padding: 2rem 2rem 0 2rem;
+      border-radius: 10px;
+      .projectImage {
+        width: 25rem;
+        height: 25rem;
+        object-fit: cover;
+        cursor: pointer;
+        border-radius: 10px;
+        overflow: hidden;
+
+        .image {
+          height: auto;
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
