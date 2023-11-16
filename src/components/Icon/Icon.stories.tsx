@@ -4,10 +4,8 @@ import { Icon } from ".";
 
 const meta: Meta<typeof Icon> = {
   title: "components/Icon",
+  
   component: Icon,
-  parameters: {
-    layout: "fullscreen",
-  },
 };
 
 export default meta;
@@ -15,9 +13,24 @@ export default meta;
 type Story = StoryObj<typeof Icon>;
 
 const template: Story = {
-  render: () => <Icon />,
+  render: (args) => <Icon {...args} />,
 };
 
 export const Default: Story = {
   ...template,
 };
+
+export const Large: Story = {
+  args: {
+    size: 'large'
+  },
+};
+
+export const Medium: Story = {
+  ...template,
+  args: {
+    size: 'medium'
+  },
+};
+
+
