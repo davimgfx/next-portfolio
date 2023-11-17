@@ -21,6 +21,7 @@ export default function Home({ params } : {params: {lang: Locale}}) {
       <Skills />
       <Works />
       <Footer />
+      <p>{dict.site.name}</p>
     </div>
   );
 }
