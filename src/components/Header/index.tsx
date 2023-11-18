@@ -1,13 +1,16 @@
 "use client";
-
-import { ThemeContext } from "@/context/ThemeContext";
+import { useContext } from "react";
 
 import styles from "./styles.module.scss";
 
+import { ThemeContext } from "@/context/ThemeContext";
+import { useHeader } from "./useHeader";
+
+import Link from "next/link";
+
 import Image from "next/image";
 
-import { useHeader } from "./useHeader";
-import { useContext } from "react";
+import { Select } from "./partials/Select";
 
 export const Header = () => {
   const { flag, toggleBooleanState, iconMenu, iconTheme, closeMenu } =
@@ -18,11 +21,17 @@ export const Header = () => {
   return (
     <header className={styles.header}>
       <nav className={styles.navBar}>
-        <div>&lt; Davimgfx / &gt;</div>
+        <Link href="../">&lt; Davimgfx / &gt;</Link>
         <ul className={closeMenu}>
-          <li>Home</li>
-          <li>Projects</li>
-          <li>About</li>
+          <li>
+            <Link href="./">Home</Link>
+          </li>
+          <li>
+            <Link href="./projects">Projects</Link>
+          </li>
+          <li>
+            <Link href="./aboutme">About</Link>
+          </li>
           <li>
             <Image
               src={flag}
@@ -39,21 +48,12 @@ export const Header = () => {
             onClick={() => {
               toggleBooleanState("isDark");
 
-              if (theme === "light") {
-                setTheme("dark");
-              } else {
-                setTheme("light");
-              }
+              theme === "light" ? setTheme("dark") : setTheme("light");
             }}>
             {iconTheme}
           </div>
-          <Image
-            src={flag}
-            width={45}
-            alt="brazilian-flag"
-            onClick={() => toggleBooleanState("isBrazilianFlag")}
-            className={styles.flag}
-          />
+
+          <Select />
           <div
             className={styles.iconHamburgerDiv}
             onClick={() => toggleBooleanState("isMenuOpen")}>

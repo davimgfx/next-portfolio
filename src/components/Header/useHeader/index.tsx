@@ -3,7 +3,7 @@ import { useContext } from "react";
 import styles from "../styles.module.scss";
 
 import { ThemeContext } from "@/context/ThemeContext";
-import { useState, useCallback } from "react";
+import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoIosMoon, IoMdClose } from "react-icons/io";
 import { MdLightMode } from "react-icons/md";
