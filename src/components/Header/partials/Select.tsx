@@ -1,60 +1,55 @@
-"use client";
-
 import { useState, useEffect, useRef } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { useParams, usePathname } from "next/navigation";
 import styles from "./styles.module.scss";
-
 import { locales } from "../helpers/locales";
-
-import { useHeader } from "../useHeader";
+import { Flag } from "./Flag";
 
 export const Select = () => {
   const [isSelectOpen, setIsSelectOpen] = useState(false);
   const { lang } = useParams();
   const pathname = usePathname();
-  const { toggleBooleanState } = useHeader();
-  const selectRef = useRef(null);
+  const selectRef = useRef<HTMLDivElement | null>(null);(null);
 
   const getPathname = (lng: string) => {
     const path = pathname.split("/" + lang).join("");
     return "/" + lng + path;
   };
 
+  const closeSelect = () => {
+    setIsSelectOpen(false);
+  };
+
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (selectRef.current && !selectRef.current.contains(event.target)) {
-        setIsSelectOpen(false);
+    const handleClickOutside = (event: MouseEvent) => {
+      if (selectRef.current && !selectRef.current.contains(event.target as Node)) {
+        closeSelect();
       }
     };
 
-    document.addEventListener("mousedown", handleClickOutside);
+    document.body.addEventListener("click", handleClickOutside);
 
+  
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.body.removeEventListener("click", handleClickOutside);
     };
-  }, [selectRef]);
+  }, []);
 
   return (
     <div
+      ref={selectRef}
       className={styles.select}
       onClick={() => {
         setIsSelectOpen(!isSelectOpen);
       }}
-      ref={selectRef}>
+    >
       <div className={styles.selectDiv}>
-        {locales.map((lng) => {
-          if (lng.code !== lang) return null;
+        {locales.map(({ code, flag }) => {
+          if (code !== lang) return null;
 
           return (
-            <div className={styles.modalItem} key={lang}>
-              <Image
-                src={lng.flag.src}
-                width={45}
-                alt={lng.flag.alt}
-                className={styles.flag}
-              />
+            <div className={styles.modalItem} key={code}>
+              <Flag src={flag.src} alt={flag.alt} />
               <div className={styles.triangle} />
             </div>
           );
@@ -63,22 +58,16 @@ export const Select = () => {
 
       {isSelectOpen && (
         <div className={styles.modal}>
-          {locales.map((lng) => {
-            if (lng.code === lang) return null;
-            return (
-              <Link href={getPathname(lng.code)} key={lng.code}>
+          {locales
+            .filter(({ code }) => code !== lang)
+            .map(({ code, flag, country }) => (
+              <Link href={getPathname(code)} key={`${code}-${country}`}>
                 <div className={styles.modalItem}>
-                  <Image
-                    src={lng.flag.src}
-                    width={45}
-                    alt={lng.flag.alt}
-                    className={styles.flag}
-                  />
-                  <p>{lng.country}</p>
+                  <Flag src={flag.src} alt={flag.alt} />
+                  <p>{country}</p>
                 </div>
               </Link>
-            );
-          })}
+            ))}
         </div>
       )}
     </div>
