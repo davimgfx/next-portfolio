@@ -1,11 +1,10 @@
 import styles from "./styles.module.scss";
 import Image from "next/image";
-import { union_developers, freelancer } from "@/assets/companies";
-import { FaGithub, FaLinkedin, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { getMyAge } from "@/utils";
 import { getDictionaryUseClient } from "@/dictionaries/default-dictionary-use-client";
 import { Locale } from "@/config/i18n.config";
-import { companiesMock } from "./mock";
+import { companiesMock, socialMedias } from "./mock";
+import Link from "next/link";
 
 export const About = ({ params }: { params: { lang: Locale } }) => {
   const { dictionary, interpolation } = getDictionaryUseClient(
@@ -29,18 +28,18 @@ export const About = ({ params }: { params: { lang: Locale } }) => {
           <p>{about.paragraph3}</p>
           <h3>{about.subtitle2}</h3>
           <div className={styles.icons}>
-            <div className={styles.iconDiv}>
-              <FaGithub className={styles.icon} />
-            </div>
-            <div className={styles.iconDiv}>
-              <FaLinkedin className={styles.icon} />
-            </div>
-            <div className={styles.iconDiv}>
-              <FaInstagram className={styles.icon} />
-            </div>
-            <div className={styles.iconDiv}>
-              <FaWhatsapp className={styles.icon} />
-            </div>
+            {socialMedias.map((social) => {
+              const Icon = social.icon;
+              return (
+                <Link
+                  href={social.link}
+                  target="_blank"
+                  className={styles.iconDiv}
+                  key={social.link}>
+                  <Icon className={styles.icon} />
+                </Link>
+              );
+            })}
           </div>
         </div>
         <div className={styles.companies}>
@@ -49,7 +48,10 @@ export const About = ({ params }: { params: { lang: Locale } }) => {
             <span className="primary">{about.subtitle3_part2}</span>
           </h3>
           {companiesMock.map((company) => {
-            const companyInfos = company.name === "union" ? about.jobs.union : about.jobs.freelance
+            const companyInfos =
+              company.name === "union"
+                ? about.jobs.union
+                : about.jobs.freelance;
 
             return (
               <div className={styles.company} key={company.alt}>
@@ -68,9 +70,7 @@ export const About = ({ params }: { params: { lang: Locale } }) => {
                     <p>{companyInfos.local}</p>
                   </div>
 
-                  <p className={styles.goalsAchieved}>
-                    {companyInfos.goals}
-                  </p>
+                  <p className={styles.goalsAchieved}>{companyInfos.goals}</p>
 
                   <p className={styles.techs}>
                     {about.tech} {company.techs}

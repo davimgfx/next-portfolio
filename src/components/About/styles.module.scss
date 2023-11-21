@@ -1,11 +1,11 @@
 .about {
-  height: 100vh;
-  justify-content: center;
   display: flex;
   flex-direction: column;
   width: 99rem;
   margin: 0 auto;
+  min-height: (100vh);
   h2 {
+    margin-top: 9rem;
     text-align: left;
   }
   .main {
@@ -23,7 +23,6 @@
         align-items: center;
         gap: 0.8rem;
 
-
         .iconDiv {
           width: 3rem;
           height: 3rem;
@@ -35,7 +34,7 @@
           cursor: pointer;
           .icon {
             font-size: var(--font-size-base);
-            color: var(--text-main)
+            color: var(--text-main);
           }
         }
       }
@@ -86,6 +85,29 @@
         .goalsAchieved {
           margin: 1rem 0;
           font-size: var(--font-size-xs);
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .about {
+    width: auto;
+    margin: 0 2rem;
+    padding-bottom: 3rem;
+    .main {
+      gap: 3rem;
+      flex-direction: column;
+      .companies{
+
+        .titleSection{
+          position: static;
+          display: flex;
+          gap: 0.2rem;
+        }
+        .company{
+          width: auto;
         }
       }
     }
