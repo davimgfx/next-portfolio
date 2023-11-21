@@ -24,11 +24,12 @@
     display: flex;
     align-items: center;
     margin: 0 auto;
-    gap: 1rem;
+    gap: 3rem;
 
     li {
-      cursor: pointer;
-      padding: 1rem;
+      a {
+        cursor: pointer;
+      }
 
       &:last-child {
         padding: 0;
