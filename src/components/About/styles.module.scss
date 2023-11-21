@@ -3,7 +3,7 @@
   flex-direction: column;
   width: 99rem;
   margin: 0 auto;
-  min-height: (100vh);
+  min-height: 100vh;
   h2 {
     margin-top: 9rem;
     text-align: left;
@@ -74,7 +74,7 @@
           gap: 1rem;
           p:nth-child(1) {
             padding: 2px 5px;
-            background: var(--header-line);
+            background: var(--background-primary-700);
             border-radius: 10px;
             font-size: var(--font-size-sm);
           }
