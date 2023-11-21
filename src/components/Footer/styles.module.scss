@@ -1,20 +1,75 @@
-.footer{
-    padding: 2rem;
-    background-color: var(--background-primary-700);
+.footer {
+  padding: 2rem 0 8rem 0;
+  background-color: var(--background-primary-700);
+
+  .footerContainer {
+    width: 100rem;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    position: relative;
+    .icons {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 3rem;
 
-    .icons{
-        margin-top: 2rem;
+      .iconDiv {
         display: flex;
-        gap: 6.8rem;
+        gap: 1rem;
+        align-items: center;
+        cursor: pointer;
+        
+        .iconCircle {
+          width: 3rem;
+          height: 3rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: var(--background-projects-500);
+          border-radius: 999px;
 
-        .iconDiv{
-            display: flex;
-            gap: 1.5rem;
-            align-items: center;
+          .icon {
+            font-size: var(--font-size-sm);
+            color: var(--text-main);
+          }
         }
+      }
     }
+
+    .copyright {
+      display: flex;
+      align-items: center;
+
+      position: absolute;
+      bottom: -6rem;
+      left: 0;
+      font-size: var(--font-size-xs);
+
+      p {
+        font-size: var(--font-size-xs);
+      }
+      &Icons {
+        margin-left: 1rem;
+        margin-top: 0.3rem;
+        display: flex;
+        gap: 1rem;
+        .icon {
+          cursor: pointer;
+
+          color: var(--text-paragraph);
+          &:hover {
+            .icon {
+              color: var(--white);
+
+              transition: filter 0.9s ease-in-out;
+            }
+          }
+        }
+      }
+    }
+  }
 }
