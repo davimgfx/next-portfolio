@@ -40,7 +40,7 @@ export const ptBR = {
         position: "Front end Developer",
         date: "Set 2023 -> Dez 2023",
         local: "Remoto",
-        goals: "Desenvolvimento junto com a equipe, de uma landing page, aplicando o TDD, para uma empresa de serviços de telefones. Desenvolvi o projeto estabelecido com metodologias Ágeis, Scrum, TDD e mobile first.",
+        goals: "Desenvolvimento junto com a equipe, de uma landing page para uma empresa de serviços de telefones. Desenvolvi o projeto estabelecido com metodologias Ágeis, Scrum, TDD e mobile first.",
       },
       freelance: {
         position: "Front end Developer",

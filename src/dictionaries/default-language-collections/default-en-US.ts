@@ -34,7 +34,7 @@ export const enUS = {
     paragraph2:
       "As a front-end developer, my main goal is to create a pleasant user experience. I'm here to help you turn your ideas into reality and bring life to your projects!",
     paragraph3:
-      "My current focus is to refine my skills in the technologies I already master and become a Full-Stack Developer.",
+      "My current focus is to refine my skills in the technologies I already master and become a Full-Stack Developer",
     subtitle2: "Social Medias",
     subtitle3_part1: "Work",
     subtitle3_part2: " experience",
@@ -45,14 +45,14 @@ export const enUS = {
         date: "Set 2023 -> Dez 2023",
         local: "Remote",
         goals:
-          "Desenvolvimento junto com a equipe, de uma landing page, aplicando o TDD, para uma empresa de serviços de telefones. Desenvolvi o projeto estabelecido com metodologias Ágeis, Scrum, TDD e mobile first.",
+          "Development alongside the team, of a landing page for a telephone services company. I developed the project following Agile, Scrum, TDD, and mobile-first methodologies.",
       },
       freelance: {
         position: "Front end Developer",
         date: "Jan 2023 -> Present",
         local: "Remote",
         goals:
-          "Desenvolvimento de aplicações web responsivas garantindo uma experiência otimizada para os usuários em diferentes dispositivos. Foco em qualidade, prazo e respeito pelo cliente.",
+          "Development of responsive web applications ensuring an optimized experience for users on different devices. Emphasis on quality, deadlines, and respect for the client.",
       },
     },
   },
