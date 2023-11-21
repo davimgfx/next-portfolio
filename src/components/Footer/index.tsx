@@ -16,7 +16,7 @@ export const Footer = ({ params }: { params: { lang: Locale } }) => {
   );
 
   return (
-    <section className={styles.footer} id="footer">
+    <footer className={styles.footer} id="footer">
       <div className={styles.footerContainer}>
         <h2>
           {dict.footer.title_part1}
@@ -61,6 +61,6 @@ export const Footer = ({ params }: { params: { lang: Locale } }) => {
           </div>
         </div>
       </div>
-    </section>
+    </footer>
   );
 };
