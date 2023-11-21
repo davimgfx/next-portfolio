@@ -24,6 +24,14 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({
     localStorage.setItem("theme", theme);
   }, [theme]);
 
+  useEffect(() => {
+    const isClient = typeof window !== "undefined";
+    
+    const storedTheme = isClient ? localStorage.getItem("theme") : null;
+    
+    setTheme(storedTheme === "dark" ? "dark" : "light");
+  }, []);
+
   const values: ThemeContextProps = { theme, setTheme };
 
   return (
