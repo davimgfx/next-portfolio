@@ -42,10 +42,10 @@ export const Header = ({ params }: { params: { lang: Locale } }) => {
             <Link href="./">{dict.navbar.home}</Link>
           </li>
           <li>
-            <Link href="./projects">{dict.navbar.projects}</Link>
+            <Link href={`/${lang}/projects`}>{dict.navbar.projects}</Link>
           </li>
           <li>
-            <Link href="./aboutme">{dict.navbar.about}</Link>
+            <Link href={`/${lang}/aboutme`}>{dict.navbar.about}</Link>
           </li>
           <li>
             {locales
