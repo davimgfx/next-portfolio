@@ -1,8 +1,5 @@
-import { useContext } from "react";
-
 import styles from "../styles.module.scss";
 
-import { ThemeContext } from "@/context/ThemeContext";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoIosMoon, IoMdClose } from "react-icons/io";
@@ -16,8 +13,6 @@ export const useHeader = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDark, setIsDark] = useState(false);
   const [isBrazilianFlag, setIsBrazilianFlag] = useState(true);
-
-  const { theme, setTheme } = useContext(ThemeContext);
 
   const toggleBooleanState = (stateName: ToggleBooleanStateType) => {
     switch (stateName) {

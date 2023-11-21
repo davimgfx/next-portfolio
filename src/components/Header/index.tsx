@@ -12,11 +12,16 @@ import Image from "next/image";
 
 import { Select } from "./partials/Select";
 
-export const Header = () => {
+import { Locale } from "@/config/i18n.config";
+import { getDictionaryUseClient } from "@/dictionaries/default-dictionary-use-client";
+
+export const Header = ({ params } : {params: {lang: Locale}}) => {
   const { flag, toggleBooleanState, iconMenu, iconTheme, closeMenu } =
     useHeader();
 
   const { theme, setTheme } = useContext(ThemeContext);
+
+  const { dictionary: dict } = getDictionaryUseClient(params?.lang ?? 'pt-BR');
 
   return (
     <header className={styles.header}>
@@ -24,13 +29,13 @@ export const Header = () => {
         <Link href="../">&lt; Davimgfx / &gt;</Link>
         <ul className={closeMenu}>
           <li>
-            <Link href="./">Home</Link>
+            <Link href="./">{dict && dict?.navbar?.home}</Link>
           </li>
           <li>
-            <Link href="./projects">Projects</Link>
+            <Link href="./projects">{dict?.navbar?.projects}</Link>
           </li>
           <li>
-            <Link href="./aboutme">About</Link>
+            <Link href="./aboutme">{dict?.navbar?.about}</Link>
           </li>
           <li>
             <Image
