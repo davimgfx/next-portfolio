@@ -6,7 +6,7 @@ import styles from "./styles.module.scss";
 
 type ButtonColors = "primary" | "secondary";
 
-type ButtonIcon = "download";
+type ButtonIcon = "see";
 
 interface ButtonProps {
   children: ReactNode;
@@ -21,9 +21,9 @@ export const Button = ({ children, color = "primary", icon }: ButtonProps) => {
       : `${styles.button} ${styles.secondary}`;
 
   const iconComponent =
-    icon === "download" ? <IoMdEye className={styles.icon} /> : "";
+    icon === "see" ? <IoMdEye className={styles.icon} /> : "";
 
-  const iconComponentStyle = icon === "download" ? styles.buttonIcon : "";
+  const iconComponentStyle = icon === "see" ? styles.buttonIcon : "";
 
   return (
     <button className={`${allStyles} ${iconComponentStyle}`}>
