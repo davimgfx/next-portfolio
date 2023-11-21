@@ -7,14 +7,18 @@ import { davi_photo } from "@/assets/profile_photos";
 import Image from "next/image";
 
 import { iconsSkillsMock } from "./mock";
+import { Locale } from "@/config/i18n.config";
+import { getDictionaryUseClient } from "@/dictionaries/default-dictionary-use-client";
 
-export const Skills = () => {
+export const Skills = ({ params } : {params: {lang: Locale}}) => {
+  const { dictionary : dict} = getDictionaryUseClient(params?.lang ?? 'pt-BR');
+
   return (
     <section className={styles.skills} id="skills">
       <main className={styles.wrapper}>
         <div>
-          <h2>My <span className="primary">Skills</span></h2>
-          <p className={styles.description}>Here, you can find a list of the hard skills I use daily: </p>
+          <h2>Tech <span className="primary">Stack</span></h2>
+          <p className={styles.description}>{dict.skills.desc}</p>
           <div className={styles.icons}>
             {iconsSkillsMock.map((icon) => (
               <Icon name={icon.name} key={icon.name}>
