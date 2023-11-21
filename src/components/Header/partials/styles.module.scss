@@ -58,3 +58,9 @@
     }
   }
 }
+
+@media only screen and (max-width: 640px) {
+  .select {
+    display: none;
+  }
+}
