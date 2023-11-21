@@ -1,21 +1,29 @@
-import styles from "../styles.module.scss";
+import styles from "./styles.module.scss"
 import Image from "next/image";
+import Link from "next/link";
 import { projectsMock } from "./mock";
-import { aumigos, pulseGym, cryptoNeves } from "@/assets/projects";
 
-export const Projects = () => {
+interface ProjectsProps{
+  quantity: number;
+}
+
+export const Projects = ({quantity} : ProjectsProps) => {
+  const visibleProjects = projectsMock.slice(0, quantity);
+
   return (
     <>
-      {projectsMock.map((project, index) => (
-        <div key={index} className={styles.project}>
+      {visibleProjects.map((project) => (
+        <div key={project.alt} className={styles.project}>
           <div className={styles.projectContainerImage}>
-            <div className={styles.projectImage}>
-              <Image
-                src={project.src}
-                alt={project.alt}
-                className={styles.image}
-              />
-            </div>
+            <Link href={project.href} target="_blanket">
+              <div className={styles.projectImage} >
+                <Image
+                  src={project.src}
+                  alt={project.alt}
+                  className={`${styles.image} ${styles[project.hoverEffect]}`}
+                />
+              </div >
+            </Link>
           </div>
           <div className={styles.projectDescription}>
             <h3>{project.alt}</h3>

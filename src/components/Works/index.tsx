@@ -2,23 +2,30 @@ import Image from "next/image";
 import styles from "./styles.module.scss";
 
 import { Button } from "@/components";
-import { aumigos, pulseGym, cryptoNeves } from "@/assets/projects";
+
 
 import { Projects } from "./partials/Projects";
-export const Works = () => {
+import Link from "next/link";
+import { Locale } from "@/config/i18n.config";
+import { getDictionaryUseClient } from "@/dictionaries/default-dictionary-use-client";
+export const Works = ({ params } : {params: {lang: Locale}}) => {
+  const { dictionary : dict} = getDictionaryUseClient(params?.lang ?? 'pt-BR');
+
   return (
     <section className={styles.section} id="works">
       <div className={styles.wrapper}>
         <h2>
-          My recent <span className="primary">works</span>
+          {dict.works.title_part1}<span className="primary">{dict.works.title_part2}</span>
         </h2>
         <p className={styles.description}>
-          Here you can see my last works, if you want to see more:
+        {dict.works.desc}
         </p>
-        <Button>All my projects</Button>
+        <Link href="./projects">
+          <Button>{dict.works.button}</Button>
+        </Link>
 
         <div className={styles.projects}>
-          <Projects />
+          <Projects quantity={3}/>
         </div>
       </div>
     </section>
