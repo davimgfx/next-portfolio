@@ -48,6 +48,8 @@
         position: absolute;
         top: 0;
         right: 0;
+        display: flex;
+        gap: 0.5rem;
       }
       .company {
         display: flex;
@@ -99,15 +101,44 @@
     .main {
       gap: 3rem;
       flex-direction: column;
-      .companies{
-
-        .titleSection{
+      .companies {
+        gap: 1.5rem;
+        .titleSection {
           position: static;
-          display: flex;
-          gap: 0.2rem;
         }
-        .company{
+        .company {
           width: auto;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .about {
+    width: auto;
+    margin: 0 2rem;
+    padding-bottom: 3rem;
+    .main {
+      gap: 1.5rem;
+      flex-direction: column;
+      .companies {
+        .company {
+          width: auto;
+
+          .title {
+            flex-direction: column;
+            align-items: start;
+            gap: 0;
+            margin-bottom: 1rem;
+          }
+
+          .subtitle {
+            p:nth-child(1) {
+              padding: 0;
+              background: none;
+            }
+          }
         }
       }
     }
