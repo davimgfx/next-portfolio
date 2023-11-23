@@ -1,19 +1,27 @@
-import { getDictionaryUseClient } from "@/dictionaries/default-dictionary-use-client";
 import styles from "./styles.module.scss";
 
-import { GoProjectSymlink } from "react-icons/go";
-import { IoPersonSharp } from "react-icons/io5";
+import Link from "next/link";
+import { IoLogoLinkedin } from "react-icons/io5";
+import { FaGithub } from "react-icons/fa";
+import { getDictionaryUseClient } from "@/dictionaries/default-dictionary-use-client";
 import { Locale } from "@/config/i18n.config";
 
-import { FaGithub, FaWhatsapp } from "react-icons/fa";
-import { IoLogoLinkedin } from "react-icons/io";
-import Link from "next/link";
+import { footerIconsMock } from "./mock";
 import { getYear } from "@/utils";
+import { useParams, usePathname } from "next/navigation";
 
 export const Footer = ({ params }: { params: { lang: Locale } }) => {
   const { dictionary: dict, interpolation } = getDictionaryUseClient(
     params?.lang ?? "pt-BR"
   );
+
+  const { lang } = useParams();
+  const pathname = usePathname();
+
+  const getPathname = (lng: string) => {
+    const path = pathname.split("/" + lang).join("");
+    return "/" + lng + path;
+  };
 
   return (
     <footer className={styles.footer} id="footer">
@@ -24,24 +32,26 @@ export const Footer = ({ params }: { params: { lang: Locale } }) => {
         </h2>
         <p>{dict.footer.desc}</p>
         <div className={styles.icons}>
-          <div className={styles.iconDiv}>
-            <div className={styles.iconCircle}>
-              <GoProjectSymlink className={styles.icon}/>
-            </div>
-            <p>{dict.navbar.projects}</p>
-          </div>
-          <div className={styles.iconDiv}>
-            <div className={styles.iconCircle}>
-              <IoPersonSharp className={styles.icon} />
-            </div>
-            <p>{dict.navbar.about}</p>
-          </div>
-          <div className={styles.iconDiv}>
-            <div className={styles.iconCircle}>
-              <FaWhatsapp className={styles.icon}/>
-            </div>
-            <p>(+55) 71 - 99633-8832</p>
-          </div>
+          {footerIconsMock.map((social) => {
+            const Icon = social.icon;
+
+            const desc =
+              social.desc === "projects"
+                ? dict.navbar.projects
+                : social.desc === "aboutme"
+                ? dict.navbar.about
+                : social.desc;
+
+            const link = social.link ? social.link : `/${lang}/${social.desc}`;
+            return (
+              <Link href={link} key={social.desc} className={styles.iconDiv}>
+                <div className={styles.iconCircle}>
+                  <Icon className={styles.icon} />
+                </div>
+                <p>{desc}</p>
+              </Link>
+            );
+          })}
         </div>
         <div className={styles.copyright}>
           <p>
@@ -50,12 +60,12 @@ export const Footer = ({ params }: { params: { lang: Locale } }) => {
             })}
           </p>
           <div className={styles.copyrightIcons}>
-            <Link href="https://github.com/davimgfx" target="_blanket">
+            <Link href="https://github.com/davimgfx" target="_blank">
               <FaGithub className={styles.icon} />
             </Link>
             <Link
               href="https://www.linkedin.com/in/davifncosta/"
-              target="_blanket">
+              target="_blank">
               <IoLogoLinkedin className={styles.icon} />
             </Link>
           </div>
