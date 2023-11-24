@@ -98,13 +98,30 @@
     width: auto;
     margin: 0 2rem;
     padding-bottom: 3rem;
+
+    h2 {
+      text-align: center;
+    }
     .main {
       gap: 3rem;
       flex-direction: column;
+
+      .aboutInfos {
+        h3 {
+          display: flex;
+          justify-content: center;
+          text-align: center;
+        }
+        .icons {
+          justify-content: center;
+        }
+      }
       .companies {
         gap: 1.5rem;
         .titleSection {
           position: static;
+          display: flex;
+          justify-content: center;
         }
         .company {
           width: auto;
@@ -122,6 +139,7 @@
     .main {
       gap: 1.5rem;
       flex-direction: column;
+      align-items: center;
       .companies {
         .company {
           width: auto;

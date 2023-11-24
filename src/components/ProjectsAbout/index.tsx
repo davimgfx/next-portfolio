@@ -18,7 +18,7 @@ export const ProjectsAbout = ({ params }: { params: { lang: Locale } }) => {
       </div>
 
       <div className={styles.projects}>
-        <Projects quantity={3} />
+        <Projects quantity={6} />
       </div>
     </section>
   );
