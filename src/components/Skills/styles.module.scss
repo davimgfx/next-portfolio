@@ -58,3 +58,69 @@
   }
 }
 
+@media only screen and (max-width: 1200px) {
+  .skills {
+    .wrapper {
+      flex-direction: column-reverse;
+      gap: 1rem;
+      width: auto;
+      div {
+        text-align: center;
+      }
+    }
+  }
+  .profile_div {
+    .cylinder_purple {
+      display: none;
+    }
+  }
+
+  .icons {
+    width: auto;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .profile_div {
+    width: 250px;
+    height: 250px;
+    border-radius: 999px;
+    border: 3px var(--white) solid;
+    position: relative;
+
+    .profile_image {
+      width: 250px;
+      height: 250px;
+      position: relative;
+    }
+
+    .purple_circle {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: var(--primary-500);
+      border-radius: 999px;
+      width: 250px;
+      height: 250px;
+    }
+
+    .cylinder_purple {
+      position: absolute;
+      top: -40px;
+      left: 30px;
+      width: 283.496px;
+      height: 447.944px;
+      transform: rotate(45deg);
+      border-radius: 447.944px;
+      background: rgba(117, 78, 249, 0.35);
+    }
+  }
+
+  .icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem 0.5rem;
+  }
+}

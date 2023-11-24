@@ -1,13 +1,11 @@
-import Image from "next/image";
 import styles from "./styles.module.scss";
 
 import { Button } from "@/components";
-
-
 import { Projects } from "./partials/Projects";
 import Link from "next/link";
 import { Locale } from "@/config/i18n.config";
 import { getDictionaryUseClient } from "@/dictionaries/default-dictionary-use-client";
+
 export const Works = ({ params } : {params: {lang: Locale}}) => {
   const { dictionary : dict} = getDictionaryUseClient(params?.lang ?? 'pt-BR');
 

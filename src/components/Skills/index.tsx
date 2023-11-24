@@ -10,14 +10,16 @@ import { iconsSkillsMock } from "./mock";
 import { Locale } from "@/config/i18n.config";
 import { getDictionaryUseClient } from "@/dictionaries/default-dictionary-use-client";
 
-export const Skills = ({ params } : {params: {lang: Locale}}) => {
-  const { dictionary : dict} = getDictionaryUseClient(params?.lang ?? 'pt-BR');
+export const Skills = ({ params }: { params: { lang: Locale } }) => {
+  const { dictionary: dict } = getDictionaryUseClient(params?.lang ?? "pt-BR");
 
   return (
     <section className={styles.skills} id="skills">
       <main className={styles.wrapper}>
         <div>
-          <h2>Tech <span className="primary">Stack</span></h2>
+          <h2>
+            Tech <span className="primary">Stack</span>
+          </h2>
           <p className={styles.description}>{dict.skills.desc}</p>
           <div className={styles.icons}>
             {iconsSkillsMock.map((icon) => (
@@ -27,12 +29,15 @@ export const Skills = ({ params } : {params: {lang: Locale}}) => {
             ))}
           </div>
         </div>
-        <div>
-          <div className={styles.profile_div}>
-            <div className={styles.purple_circle} />
-            <div className={styles.cylinder_purple} />
-            <Image src={davi_photo} className={styles.profile_image} alt="profile_photo" />
-          </div>
+
+        <div className={styles.profile_div}>
+          <div className={styles.purple_circle} />
+          <div className={styles.cylinder_purple} />
+          <Image
+            src={davi_photo}
+            className={styles.profile_image}
+            alt="profile_photo"
+          />
         </div>
       </main>
     </section>

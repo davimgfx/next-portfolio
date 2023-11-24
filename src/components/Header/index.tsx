@@ -18,7 +18,7 @@ import { locales } from "./helpers/locales";
 import { Flag } from "./partials/Flag";
 
 export const Header = ({ params }: { params: { lang: Locale } }) => {
-  const { flag, toggleBooleanState, iconMenu, iconTheme, closeMenu } =
+  const { toggleBooleanState, iconMenu, iconTheme, closeMenu } =
     useHeader();
 
   const { theme, setTheme } = useContext(ThemeContext);

@@ -1,25 +1,53 @@
-import { aumigos, pulseGym, cryptoNeves } from "@/assets/projects";
+import {
+  aumigos,
+  pulseGym,
+  cryptoNeves,
+  hoobank,
+  toDo,
+  amazonClone,
+} from "@/assets/projects";
 
 export const projectsMock = [
   {
     src: aumigos,
-    alt: "aumigos_project",
+    alt: "Aumigos 🐶",
     href: "https://aumigos-casa.vercel.app/",
     tags: ["React", "Firebase", "Tailwind"],
-    hoverEffect: "aumigos"
+    hoverEffect: "aumigos",
   },
   {
     src: cryptoNeves,
-    alt: "cryptoNeves_project",
+    alt: "Crypto Neves 💰",
     href: "https://crypto-neves.vercel.app/",
     tags: ["React", "Firebase", "Material-ui"],
-    hoverEffect: "cryptoNeves"
+    hoverEffect: "cryptoNeves",
   },
   {
     src: pulseGym,
-    alt: "pulseGym_project",
+    alt: "Pulse Gym 🏋️‍♀️",
     href: "https://davimgfx.github.io/pulseGym/",
     tags: ["React", "Tailwind"],
-    hoverEffect: "pulseGym"
+    hoverEffect: "pulseGym",
+  },
+  {
+    src: hoobank,
+    alt: "Hoobank 🤖",
+    href: "https://davimgfx.github.io/hoobank/",
+    tags: ["React", "Tailwind"],
+    hoverEffect: "pulseGym",
+  },
+  {
+    src: amazonClone,
+    alt: "Amazon Clone 🐱‍👤",
+    href: "https://nextamazon-clone.vercel.app/",
+    tags: ["Next", "Redux", "TypeScript", "Firebase", "React Forms"],
+    hoverEffect: "pulseGym",
+  },
+  {
+    src: toDo,
+    alt: "To do 📚",
+    href: "https://nextamazon-clone.vercel.app/",
+    tags: ["Next", "TypeScript", "StoryBook", "Sass", "Node", "Express"],
+    hoverEffect: "pulseGym",
   },
 ];
