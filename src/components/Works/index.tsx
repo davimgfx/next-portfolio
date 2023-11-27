@@ -23,7 +23,7 @@ export const Works = ({ params } : {params: {lang: Locale}}) => {
         </Link>
 
         <div className={styles.projects}>
-          <Projects quantity={3}/>
+          <Projects quantity={3} params={params}/>
         </div>
       </div>
     </section>

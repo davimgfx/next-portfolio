@@ -34,20 +34,20 @@ export const projectsMock = [
     alt: "Hoobank 🤖",
     href: "https://davimgfx.github.io/hoobank/",
     tags: ["React", "Tailwind"],
-    hoverEffect: "pulseGym",
+    hoverEffect: "hoobank",
   },
   {
     src: amazonClone,
     alt: "Amazon Clone 🐱‍👤",
     href: "https://nextamazon-clone.vercel.app/",
     tags: ["Next", "Redux", "TypeScript", "Firebase", "React Forms"],
-    hoverEffect: "pulseGym",
+    hoverEffect: "amazonClone",
   },
   {
     src: toDo,
     alt: "To do 📚",
     href: "https://nextamazon-clone.vercel.app/",
     tags: ["Next", "TypeScript", "StoryBook", "Sass", "Node", "Express"],
-    hoverEffect: "pulseGym",
+    hoverEffect: "todo",
   },
 ];

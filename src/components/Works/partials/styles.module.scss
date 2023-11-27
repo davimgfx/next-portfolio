@@ -42,6 +42,12 @@
     }
   }
 
+  .projectDescription{
+    h3{
+      font-size: var(--font-size-lg);
+    }
+  }
+
   .tags {
     display: flex;
     gap: 0.4rem;
