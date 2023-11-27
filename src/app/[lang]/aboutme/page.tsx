@@ -1,9 +1,9 @@
 "use client";
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { Locale } from "../../../config/i18n.config";
-import { Header } from "@/components";
+import { Header, ScrollUp, About } from "@/components";
 import { ThemeContext } from "@/context/ThemeContext";
-import { About } from "@/components";
+
 
 const AboutMe = ({ params }: { params: { lang: Locale } }) => {
   const { theme } = useContext(ThemeContext);
@@ -12,6 +12,7 @@ const AboutMe = ({ params }: { params: { lang: Locale } }) => {
     <div id={theme}>
       <Header params={{ lang: params.lang }} />
       <About params={{ lang: params.lang }} />
+      <ScrollUp />
     </div>
   );
 };
