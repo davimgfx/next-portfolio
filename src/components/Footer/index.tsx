@@ -43,8 +43,11 @@ export const Footer = ({ params }: { params: { lang: Locale } }) => {
                 : social.desc;
 
             const link = social.link ? social.link : `/${lang}/${social.desc}`;
+
+            const blanket = social.link ? { target: "_blank" } : {};
+
             return (
-              <Link href={link} key={social.desc} className={styles.iconDiv}>
+              <Link href={link} key={social.desc} className={styles.iconDiv} {...blanket}>
                 <div className={styles.iconCircle}>
                   <Icon className={styles.icon} />
                 </div>

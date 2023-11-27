@@ -1,11 +1,11 @@
 import { FaWhatsapp } from "react-icons/fa";;
 import { IoPersonSharp } from "react-icons/io5"
-import { GoProjectSymlink } from "react-icons/go";
+import { FaFolderOpen } from "react-icons/fa";
 
 export const footerIconsMock = [
     {
         desc: "projects",
-        icon: GoProjectSymlink,
+        icon: FaFolderOpen,
     },
     {
         desc: "aboutme",
