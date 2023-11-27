@@ -56,4 +56,19 @@ export const enUS = {
       },
     },
   },
+  projects: {
+    title_part1: "My",
+    title_part2: " Projects",
+    aumigos:
+      "At Aumigos Casas, we provide the best possible care for your little furry friend, with various playtime activities, attention, affection, swimming pool, fun, and much more. ",
+    cryptoNeves:
+      "CryptoNeves provide users crypto prices, market cap and trading volume.",
+    pulseGym:
+      "A fitness website with fitness information, class schedules, membership options, and tools to help users achieve their fitness goals.",
+    hoobank:
+      "Hoobank is a modern bank that allows you to transfer money, receive loans, view your transactions, and check your current balance.",
+    amazonClone:
+      "This website is a simulated representation and not an actual Amazon site. All rights are reserved by Amazon.",
+    todo: "A simple to-do list, salve our your activities.",
+  },
 };
