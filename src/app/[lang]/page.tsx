@@ -2,7 +2,7 @@
 
 import { useContext } from "react";
 
-import { Header, Hero, Skills, Works, Footer } from "../../components";
+import { Header, Hero, Skills, Works, Footer, ScrollUp } from "@/components";
 
 import { ThemeContext } from "@/context/ThemeContext";
 
@@ -14,6 +14,7 @@ export default function Home({ params }: { params: { lang: Locale } }) {
   return (
     <div id={theme}>
       <Header params={{ lang: params.lang }} />
+      <ScrollUp />
       <Hero params={{ lang: params.lang }} />
       <Skills params={{ lang: params.lang }} />
       <Works params={{ lang: params.lang }} />

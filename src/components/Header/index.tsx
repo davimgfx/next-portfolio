@@ -1,21 +1,18 @@
 "use client";
-import { useContext } from "react";
-import { useParams, usePathname } from "next/navigation";
 import styles from "./styles.module.scss";
 
+import { useContext } from "react";
+import { useParams, usePathname } from "next/navigation";
 import { ThemeContext } from "@/context/ThemeContext";
 import { useHeader } from "./useHeader";
 
 import Link from "next/link";
 
-import Image from "next/image";
+import { Flag, Select } from "./partials";
 
-import { Select } from "./partials/Select";
-
-import { Locale } from "@/config/i18n.config";
 import { getDictionaryUseClient } from "@/dictionaries/default-dictionary-use-client";
 import { locales } from "./helpers/locales";
-import { Flag } from "./partials/Flag";
+import { Locale } from "@/config/i18n.config";
 
 export const Header = ({ params }: { params: { lang: Locale } }) => {
   const { toggleBooleanState, iconMenu, iconTheme, closeMenu } =
