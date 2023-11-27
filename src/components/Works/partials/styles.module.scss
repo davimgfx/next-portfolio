@@ -8,6 +8,7 @@
     background: var(--background-icons);
     padding: 2rem 2rem 0 2rem;
     border-radius: 10px;
+
     .projectImage {
       width: 25rem;
       height: 25rem;
@@ -39,12 +40,48 @@
           transform: translateY(-78.7%);
         }
       }
+
+      .hoobank {
+        &:hover {
+          transform: translateY(-50.7%);
+        }
+      }
+
+      .amazonClone {
+        &:hover {
+          transform: translateY(-50%);
+        }
+      }
     }
   }
 
-  .projectDescription{
-    h3{
+  .projectDescription {
+    h3 {
       font-size: var(--font-size-lg);
+    }
+
+    .projectTitle {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+      .icons {
+        display: flex;
+        gap: 1rem;
+        .iconDiv {
+          width: 3rem;
+          height: 3rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: var(--background-primary-700);
+          border-radius: 999px;
+          cursor: pointer;
+          .icon {
+            font-size: var(--font-size-base);
+            color: var(--text-main);
+          }
+        }
+      }
     }
   }
 

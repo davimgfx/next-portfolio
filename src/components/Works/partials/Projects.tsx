@@ -4,6 +4,8 @@ import Link from "next/link";
 import { projectsMock } from "./mock";
 import { Locale } from "@/config/i18n.config";
 import { getDictionaryUseClient } from "@/dictionaries/default-dictionary-use-client";
+import { FaGithub } from "react-icons/fa";
+import { MdOutlineWebAsset } from "react-icons/md";
 interface ProjectsProps {
   quantity: number;
   params: {
@@ -30,7 +32,9 @@ export const Projects = ({ quantity, params }: ProjectsProps) => {
             ? projects.pulseGym
             : project.hoverEffect === "hoobank"
             ? projects.hoobank
-            : project.hoverEffect === "amazonClone" ? projects.amazonClone : projects.todo
+            : project.hoverEffect === "amazonClone"
+            ? projects.amazonClone
+            : projects.todo;
 
         return (
           <div key={project.alt} className={styles.project}>
@@ -46,7 +50,17 @@ export const Projects = ({ quantity, params }: ProjectsProps) => {
               </Link>
             </div>
             <div className={styles.projectDescription}>
-              <h3>{project.alt}</h3>
+              <div className={styles.projectTitle}>
+                <h3>{project.alt}</h3>
+                <div className={styles.icons}>
+                  <Link href={project.github}  target="_blank" className={styles.iconDiv}>
+                    <FaGithub className={styles.icon} />
+                  </Link>
+                  <Link href={project.href}  target="_blank" className={styles.iconDiv}>
+                    <MdOutlineWebAsset className={styles.icon} />
+                  </Link>
+                </div>
+              </div>
               <p>{projectInfo}</p>
             </div>
             <div className={styles.tags}>
