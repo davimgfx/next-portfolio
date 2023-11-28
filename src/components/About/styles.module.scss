@@ -29,12 +29,18 @@
           display: flex;
           align-items: center;
           justify-content: center;
-          background: var(--background-primary-700);
+          background: var(--background-icons);
           border-radius: 999px;
           cursor: pointer;
           .icon {
             font-size: var(--font-size-base);
-            color: var(--text-main);
+            color: var(--white-dark);
+            transition: color 0.3s ease;
+          }
+          &:hover {
+            .icon {
+              color: var(--white);
+            }
           }
         }
       }

@@ -30,12 +30,18 @@
   border-radius: 999px;
   cursor: pointer;
 
+  &:hover {
+    .iconTheme {
+      color: var(--white);
+    }
+  }
+
   .iconTheme {
     width: 1.8rem;
-    color: var(--color-icons);
+    color: var(--white-dark);
+    transition: color 0.3s ease;
   }
 }
 
 @media only screen and (max-width: 640px) {
-
 }

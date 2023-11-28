@@ -6,6 +6,7 @@ import { FaGithub } from "react-icons/fa";
 import { getDictionaryUseClient } from "@/dictionaries/default-dictionary-use-client";
 import { Locale } from "@/config/i18n.config";
 
+
 import { footerIconsMock } from "./mock";
 import { getYear } from "@/utils";
 import { useParams, usePathname } from "next/navigation";

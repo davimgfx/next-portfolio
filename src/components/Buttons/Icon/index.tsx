@@ -1,15 +1,12 @@
 import React, { ReactNode } from "react";
 import styles from "./styles.module.scss";
 
-type IconSizes = "medium" | "large";
-
 interface IconProps {
-  children?: ReactNode;
-  size?: IconSizes;
-  name?: string;
+  children: ReactNode;
+  name: string;
 }
 
-export const Icon = ({ size = "medium", children, name }: IconProps) => {
+export const Icon = ({ children, name }: IconProps) => {
   return (
     children && (
       <div className={styles.wrapper}>
