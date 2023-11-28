@@ -11,8 +11,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
   .button {
     font-size: var(--font-size-xs);
-    color: var(--white);
+    color: var(--white-dark);
+    transition: color 0.3s ease;
+  }
+  
+  &:hover {
+    .button {
+      color: var(--white);
+    }
   }
 }

@@ -63,13 +63,13 @@
       &:hover {
         .iconTheme {
           color: var(--white);
-          transition: filter 0.9s ease-in-out;
         }
       }
 
       .iconTheme {
         width: 1.8rem;
-        color: var(--color-icons);
+        color: var(--white-dark);
+        transition: color 0.3s ease;
       }
     }
 

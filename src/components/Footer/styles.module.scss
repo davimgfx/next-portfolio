@@ -29,12 +29,19 @@
           display: flex;
           align-items: center;
           justify-content: center;
-          background: var(--background-projects-500);
+          background: var(--background-icons);
           border-radius: 999px;
 
           .icon {
             font-size: var(--font-size-sm);
-            color: var(--text-main);
+            color: var(--white-dark);
+            transition: color 0.3s ease;
+          }
+
+          &:hover {
+            .icon {
+              color: var(--white);
+            }
           }
         }
       }
@@ -56,16 +63,14 @@
         margin-top: 0.3rem;
         display: flex;
         gap: 1rem;
+
         .icon {
           cursor: pointer;
-
-          color: var(--text-paragraph);
+          color: var(--secondary-500);
+          transition: color 0.3s ease;
+          
           &:hover {
-            .icon {
-              color: var(--white);
-
-              transition: filter 0.9s ease-in-out;
-            }
+            color: var(--background-projects-500);
           }
         }
       }
@@ -100,7 +105,7 @@
       .icons {
         margin-top: 0rem;
         flex-direction: column;
-        gap: 2rem
+        gap: 2rem;
       }
     }
   }
