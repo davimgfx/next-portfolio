@@ -13,6 +13,11 @@ interface ProjectsProps {
   };
 }
 
+type ProjectMappings = {
+  [key: string]: string;
+};
+
+
 export const Projects = ({ quantity, params }: ProjectsProps) => {
   const visibleProjects = projectsMock.slice(0, quantity);
 
@@ -20,21 +25,20 @@ export const Projects = ({ quantity, params }: ProjectsProps) => {
 
   const { projects } = dict;
 
+  const projectMappings : ProjectMappings = {
+    aumigos: projects.aumigos,
+    cryptoNeves: projects.cryptoNeves,
+    pulseGym: projects.pulseGym,
+    hoobank: projects.hoobank,
+    amazonClone: projects.amazonClone,
+    todo: projects.todo,
+  };
+
   return (
     <>
       {visibleProjects.map((project) => {
         const projectInfo =
-          project.hoverEffect === "aumigos"
-            ? projects.aumigos
-            : project.hoverEffect === "cryptoNeves"
-            ? projects.cryptoNeves
-            : project.hoverEffect === "pulseGym"
-            ? projects.pulseGym
-            : project.hoverEffect === "hoobank"
-            ? projects.hoobank
-            : project.hoverEffect === "amazonClone"
-            ? projects.amazonClone
-            : projects.todo;
+          projectMappings[project.hoverEffect] 
 
         return (
           <div key={project.alt} className={styles.project}>
@@ -53,10 +57,16 @@ export const Projects = ({ quantity, params }: ProjectsProps) => {
               <div className={styles.projectTitle}>
                 <h3>{project.alt}</h3>
                 <div className={styles.icons}>
-                  <Link href={project.github}  target="_blank" className={styles.iconDiv}>
+                  <Link
+                    href={project.github}
+                    target="_blank"
+                    className={styles.iconDiv}>
                     <FaGithub className={styles.icon} />
                   </Link>
-                  <Link href={project.href}  target="_blank" className={styles.iconDiv}>
+                  <Link
+                    href={project.href}
+                    target="_blank"
+                    className={styles.iconDiv}>
                     <MdOutlineWebAsset className={styles.icon} />
                   </Link>
                 </div>
