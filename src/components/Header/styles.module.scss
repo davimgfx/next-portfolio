@@ -15,8 +15,8 @@
     justify-content: space-between;
     align-items: center;
     height: 100%;
-    max-width: 140rem;
-    padding: 0 5.6rem;
+    max-width: 100rem;
+
     margin: 0 auto;
   }
 
@@ -24,15 +24,15 @@
     display: flex;
     align-items: center;
     margin: 0 auto;
-    gap: 3rem;
 
     li {
       a {
         cursor: pointer;
-      }
+        margin-left: 3rem;
 
-      &:last-child {
-        padding: 0;
+        &:nth-last-child(2) {
+          margin-left: 0;
+        }
       }
 
       &:hover {
@@ -48,7 +48,10 @@
   .flagAndIconTheme {
     display: flex;
     align-items: center;
-    gap: 2rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
 
     .iconThemeDiv {
       background-color: var(--background-icons);
@@ -92,24 +95,23 @@
       align-items: center;
       border-radius: 999px;
       cursor: pointer;
+    }
 
-      .iconHamburger {
-        display: none;
-        width: 1.8rem;
-        color: var(--color-icons);
-      }
+    .iconHamburger {
+      display: none;
+      width: 1.8rem;
+      color: var(--color-icons);
     }
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1050px) {
   .header {
     .navBar {
-      padding: 0 2.8rem;
+      margin: 0 2rem;
     }
   }
 }
-
 @media only screen and (max-width: 640px) {
   .header {
     .navBar {
@@ -123,6 +125,18 @@
         justify-content: center;
         height: 24.7rem;
         border-radius: 0 0 2rem 2rem;
+        gap: 3rem;
+
+        li {
+          a {
+            cursor: pointer;
+            margin-left: 0rem;
+
+            &:nth-last-child(2) {
+              margin-left: 0;
+            }
+          }
+        }
 
         .flagMobile {
           display: block;
@@ -144,6 +158,7 @@
       .iconHamburgerDiv {
         width: 3.4rem;
         height: 3.4rem;
+        margin-left: 2rem;
 
         .iconHamburger {
           display: flex;
