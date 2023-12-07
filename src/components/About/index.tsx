@@ -6,6 +6,7 @@ import { Locale } from "@/config/i18n.config";
 import { companiesMock, socialMedias } from "./mock";
 import Link from "next/link";
 
+
 export const About = ({ params }: { params: { lang: Locale } }) => {
   const { dictionary, interpolation } = getDictionaryUseClient(
     params?.lang ?? "pt-BR"

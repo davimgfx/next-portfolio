@@ -23,7 +23,7 @@ export const Skills = ({ params }: { params: { lang: Locale } }) => {
           <p className={styles.description}>{dict.skills.desc}</p>
           <div className={styles.icons}>
             {iconsSkillsMock.map((icon) => (
-              <Icon name={icon.name} key={icon.name}>
+              <Icon name={icon.name} key={icon.name} size="large">
                 <Image src={icon.icon.src} alt={icon.icon.alt} />
               </Icon>
             ))}

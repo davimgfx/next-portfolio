@@ -22,56 +22,34 @@
         gap: 1rem;
         align-items: center;
         cursor: pointer;
-
-        .iconCircle {
-          width: 3rem;
-          height: 3rem;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background: var(--background-icons);
-          border-radius: 999px;
-
-          .icon {
-            font-size: var(--font-size-sm);
-            color: var(--white-dark);
-            transition: color 0.3s ease;
-          }
-
-          &:hover {
-            .icon {
-              color: var(--white);
-            }
-          }
-        }
       }
     }
+  }
 
-    .copyright {
-      display: flex;
-      align-items: center;
-      position: absolute;
-      bottom: -6rem;
-      left: 0;
+  .copyright {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: -6rem;
+    left: 0;
+    font-size: var(--font-size-xs);
+
+    p {
       font-size: var(--font-size-xs);
+    }
+    &Icons {
+      margin-left: 1rem;
+      margin-top: 0.3rem;
+      display: flex;
+      gap: 1rem;
 
-      p {
-        font-size: var(--font-size-xs);
-      }
-      &Icons {
-        margin-left: 1rem;
-        margin-top: 0.3rem;
-        display: flex;
-        gap: 1rem;
+      .icon {
+        cursor: pointer;
+        color: var(--secondary-500);
+        transition: color 0.3s ease;
 
-        .icon {
-          cursor: pointer;
-          color: var(--secondary-500);
-          transition: color 0.3s ease;
-          
-          &:hover {
-            color: var(--background-projects-500);
-          }
+        &:hover {
+          color: var(--background-projects-500);
         }
       }
     }

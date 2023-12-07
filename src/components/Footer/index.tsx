@@ -6,7 +6,7 @@ import { FaGithub } from "react-icons/fa";
 import { getDictionaryUseClient } from "@/dictionaries/default-dictionary-use-client";
 import { Locale } from "@/config/i18n.config";
 
-
+import { Icon } from "..";
 import { footerIconsMock } from "./mock";
 import { getYear } from "@/utils";
 import { useParams, usePathname } from "next/navigation";
@@ -34,7 +34,7 @@ export const Footer = ({ params }: { params: { lang: Locale } }) => {
         <p>{dict.footer.desc}</p>
         <div className={styles.icons}>
           {footerIconsMock.map((social) => {
-            const Icon = social.icon;
+            const ImageIcon = social.icon;
 
             const desc =
               social.desc === "projects"
@@ -48,10 +48,14 @@ export const Footer = ({ params }: { params: { lang: Locale } }) => {
             const blanket = social.link ? { target: "_blank" } : {};
 
             return (
-              <Link href={link} key={social.desc} className={styles.iconDiv} {...blanket}>
-                <div className={styles.iconCircle}>
-                  <Icon className={styles.icon} />
-                </div>
+              <Link
+                href={link}
+                key={social.desc}
+                className={styles.iconDiv}
+                {...blanket}>
+                <Icon size="small">
+                  <ImageIcon />
+                </Icon>
                 <p>{desc}</p>
               </Link>
             );

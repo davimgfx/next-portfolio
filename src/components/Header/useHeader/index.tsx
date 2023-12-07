@@ -30,17 +30,9 @@ export const useHeader = () => {
 
   const flag = isBrazilianFlag ? brazilFlag : EnglishFlag;
 
-  const iconMenu = isMenuOpen ? (
-    <IoMdClose className={styles.iconHamburger} />
-  ) : (
-    <GiHamburgerMenu className={styles.iconHamburger} />
-  );
+  const iconMenu = isMenuOpen ? <IoMdClose /> : <GiHamburgerMenu />;
 
-  const iconTheme = theme === "dark" ? (
-    <MdLightMode className={styles.iconTheme} />
-  ) : (
-    <IoIosMoon className={styles.iconTheme} />
-  );
+  const iconTheme = theme === "dark" ? <MdLightMode /> : <IoIosMoon />;
 
   const closeMenu = isMenuOpen
     ? `${styles.section}`

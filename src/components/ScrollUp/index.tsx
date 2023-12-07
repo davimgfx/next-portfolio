@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaArrowUpLong } from "react-icons/fa6";
-import styles from "./styles.module.scss";
-import { MdOutlineKeyboardArrowUp } from "react-icons/md";
+import { Icon } from "..";
 
 export const ScrollUp = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -35,9 +34,9 @@ export const ScrollUp = () => {
   return (
     <>
       {isVisible && (
-        <button className={styles.buttonDiv} onClick={scrollToTop}>
-          <FaArrowUpLong className={styles.button} />
-        </button>
+        <Icon size="medium" fixed={true} onClick={scrollToTop}>
+          <FaArrowUpLong />
+        </Icon>
       )}
     </>
   );

@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { useParams, usePathname } from "next/navigation";
 import { ThemeContext } from "@/context/ThemeContext";
 import { useHeader } from "./useHeader";
-
+import { Icon } from "..";
 import Link from "next/link";
 
 import { Flag, Select } from "./partials";
@@ -15,8 +15,7 @@ import { locales } from "./helpers/locales";
 import { Locale } from "@/config/i18n.config";
 
 export const Header = ({ params }: { params: { lang: Locale } }) => {
-  const { toggleBooleanState, iconMenu, iconTheme, closeMenu } =
-    useHeader();
+  const { toggleBooleanState, iconMenu, iconTheme, closeMenu } = useHeader();
 
   const { theme, setTheme } = useContext(ThemeContext);
 
@@ -60,21 +59,22 @@ export const Header = ({ params }: { params: { lang: Locale } }) => {
           </li>
         </ul>
         <div className={styles.flagAndIconTheme}>
-          <div
-            className={styles.iconThemeDiv}
+          <Icon
+            size="medium"
             onClick={() => {
               toggleBooleanState("isDark");
               theme === "light" ? setTheme("dark") : setTheme("light");
             }}>
             {iconTheme}
-          </div>
+          </Icon>
 
           <Select />
-          <div
-            className={styles.iconHamburgerDiv}
+          <Icon
+            size="medium"
+            hamburger={true}
             onClick={() => toggleBooleanState("isMenuOpen")}>
             {iconMenu}
-          </div>
+          </Icon>
         </div>
       </nav>
     </header>
