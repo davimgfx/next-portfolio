@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align='center'><img style="width:16%" src='https://github.com/davimgfx/new-portfolio/assets/118557337/6031622f-5695-4246-a31a-c48e0d1b6f16'/></div>
 
-## Getting Started
+# My Portfolio (English Version)
 
-First, run the development server:
+This is my portfolio project, created with Next, React and Sass. It features both English and Portuguese versions using the i18n library for internationalization. It also supports dark and light mode with the use of ThemeContext. 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+👉 Live Demo: [Click here](https://davimgfx.vercel.app/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Build with:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Next
+- React
+- Sass
+- Next i18n
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Features
 
-## Learn More
+- English and Portuguese Versions: Through the i18n library, the website is automatically translated to the selected language by the user.
+- Dark and Light Mode: The website supports both light and dark mode, allowing users to choose their preferred color scheme.
+- Responsive Design: The website design adapts to different screen sizes, providing a pleasant experience on mobile devices and desktops.
+- Pages Home, About e Projects
 
-To learn more about Next.js, take a look at the following resources:
+# Meu Portfólio (Versão português)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Este é o meu projeto de portfólio, criado com Next, React and Sass. Ele apresenta uma versão em inglês e português utilizando a biblioteca i18n para internacionalização. Além disso, também possui suporte ao modo claro e escuro com o uso do ThemeContext.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+👉 Site: [Click here](https://davimgfx.vercel.app/)
 
-## Deploy on Vercel
+### Tecnologias utilizadas
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- React
+- Tailwind CSS
+- i18n
+- ThemeContext
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Funcionalidades
+
+- Versão em inglês e português: Através da biblioteca i18n, o site é traduzido automaticamente para o idioma selecionado pelo usuário.
+- Modo claro e escuro: O site suporta tanto o modo claro quanto o modo escuro, permitindo que o usuário escolha a preferência de cores.
+- Responsivo: O design do site se adapta a diferentes tamanhos de tela, proporcionando uma experiência agradável em dispositivos móveis e desktops.
+- Páginas Home, Sobre e Projetos
+
