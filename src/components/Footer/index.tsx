@@ -9,7 +9,12 @@ import { Locale } from "@/config/i18n.config";
 import { Icon } from "..";
 import { footerIconsMock } from "./mock";
 import { getYear } from "@/utils";
-import { useParams, usePathname } from "next/navigation";
+import { useParams } from "next/navigation";
+
+type NavbarMappings = {
+  [key: string]: string;
+};
+
 
 export const Footer = ({ params }: { params: { lang: Locale } }) => {
   const { dictionary: dict, interpolation } = getDictionaryUseClient(
@@ -17,11 +22,11 @@ export const Footer = ({ params }: { params: { lang: Locale } }) => {
   );
 
   const { lang } = useParams();
-  const pathname = usePathname();
 
-  const getPathname = (lng: string) => {
-    const path = pathname.split("/" + lang).join("");
-    return "/" + lng + path;
+  const navbarMappings: NavbarMappings = {
+    projects: dict.navbar.projects,
+    aboutme: dict.navbar.about,
+    contact: "(+55) 71 - 99633-8832"
   };
 
   return (
@@ -36,12 +41,7 @@ export const Footer = ({ params }: { params: { lang: Locale } }) => {
           {footerIconsMock.map((social) => {
             const ImageIcon = social.icon;
 
-            const desc =
-              social.desc === "projects"
-                ? dict.navbar.projects
-                : social.desc === "aboutme"
-                ? dict.navbar.about
-                : social.desc;
+            const desc = navbarMappings[social.desc];
 
             const link = social.link ? social.link : `/${lang}/${social.desc}`;
 

@@ -6,7 +6,7 @@ import { Projects } from "../Works/partials/Projects";
 import { getDictionaryUseClient } from "@/dictionaries/default-dictionary-use-client";
 
 export const ProjectsAbout = ({ params }: { params: { lang: Locale } }) => {
-  const { dictionary, interpolation } = getDictionaryUseClient(
+  const { dictionary } = getDictionaryUseClient(
     params?.lang ?? "pt-BR"
   );
 

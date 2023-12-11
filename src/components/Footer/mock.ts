@@ -13,7 +13,7 @@ export const footerIconsMock = [
 
     },
     {
-        desc: "(+55) 71 - 99633-8832",
+        desc: "contact",
         icon: FaWhatsapp,
         link: "https://wa.me//5571996338832"
     },
