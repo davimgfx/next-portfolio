@@ -51,7 +51,7 @@ export const projectsMock = [
   {
     src: toDo,
     alt: "To do 📚",
-    href: "https://nextamazon-clone.vercel.app/",
+    href: "",
     github: "https://github.com/davimgfx/to-do-app",
     tags: ["Next", "TypeScript", "StoryBook", "Sass", "Node", "Express"],
     hoverEffect: "todo",

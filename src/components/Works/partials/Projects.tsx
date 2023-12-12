@@ -17,7 +17,6 @@ type ProjectMappings = {
   [key: string]: string;
 };
 
-
 export const Projects = ({ quantity, params }: ProjectsProps) => {
   const visibleProjects = projectsMock.slice(0, quantity);
 
@@ -25,7 +24,7 @@ export const Projects = ({ quantity, params }: ProjectsProps) => {
 
   const { projects } = dict;
 
-  const projectMappings : ProjectMappings = {
+  const projectMappings: ProjectMappings = {
     aumigos: projects.aumigos,
     cryptoNeves: projects.cryptoNeves,
     pulseGym: projects.pulseGym,
@@ -37,8 +36,7 @@ export const Projects = ({ quantity, params }: ProjectsProps) => {
   return (
     <>
       {visibleProjects.map((project) => {
-        const projectInfo =
-          projectMappings[project.hoverEffect] 
+        const projectInfo = projectMappings[project.hoverEffect];
 
         return (
           <div key={project.alt} className={styles.project}>
@@ -63,12 +61,14 @@ export const Projects = ({ quantity, params }: ProjectsProps) => {
                     className={styles.iconDiv}>
                     <FaGithub className={styles.icon} />
                   </Link>
-                  <Link
-                    href={project.href}
-                    target="_blank"
-                    className={styles.iconDiv}>
-                    <MdOutlineWebAsset className={styles.icon} />
-                  </Link>
+                  {project.href && (
+                    <Link
+                      href={project.href}
+                      target="_blank"
+                      className={styles.iconDiv}>
+                      <MdOutlineWebAsset className={styles.icon} />
+                    </Link>
+                  )}
                 </div>
               </div>
               <p>{projectInfo}</p>
